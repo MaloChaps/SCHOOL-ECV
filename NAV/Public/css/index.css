@@ -1,0 +1,288 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+:root{
+	/*padding*/
+	--padding-primary: 0px 100px 0px 100px;
+	--padding-primary-mobile: 0px 60px 0px 60px;
+}
+
+
+html *{
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	text-decoration: none;
+}
+
+/*scroll bar css*/
+
+::-webkit-scrollbar {
+ display: none;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  display: none;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+   display: none;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+ display: none;
+}
+
+body{
+	scroll-behavior: smooth;
+	height: 100vh;
+	width: 100%;
+	border: solid 10px white;
+	background: url(../img/bg.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+/*font*/
+@font-face {
+	font-family: "Intro";
+	src: url('../font/Intro W01 Bold Alt.ttf');
+}
+
+.nav-titre-primary{
+	 font-family: Intro;
+	 font-size: 10px;
+	 letter-spacing: 2px;
+
+	 color: white;
+	 text-transform: uppercase;
+	transition: 0.3s ease;
+}
+
+.nav-titre-primary:hover{
+	transition: 0.3s ease;
+	text-decoration: underline;
+}
+
+
+
+
+
+/*NAV HEADER - INT*/
+.nav-burger-mobile{
+	display: none;
+}
+
+.nav-header{
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	align-items: center;
+
+	padding: var(--padding-primary);
+	padding-top: 40px;
+}
+
+li, ul{
+	list-style: none;
+	text-decoration: none;
+}
+
+.nav-primary-section{
+	display: flex;
+	text-transform: capitalize;
+}
+
+.nav-primary-section > li{
+	margin: 45px 25px;
+}
+
+.expertise > ul{
+	position: absolute;
+	background: white;
+	margin: -14px;
+	transform: translateY(-100px);
+	opacity: 	0;
+	transition: 0.8s ease;
+}
+
+.expertise:hover ul{
+	transition: 0.8s ease;
+	opacity: 1;
+	transform: translateY(-30px);
+}
+
+.expertise ul > li{
+	border-bottom: 1px solid grey;
+	padding: 14px 18px;
+}
+
+.expertise ul > li > a{
+	color: blue;
+}
+
+.expertise ul > li > a:hover{
+	color: orange;
+}
+
+.expertise{
+	position: relative;
+}
+
+/*Nav responsive*/
+
+@media screen and (min-device-width : 320px) and (max-device-width : 705px) {
+
+body{
+	border: solid white 30px;
+}
+
+
+
+.nav-header{
+	padding: var(--padding-primary-mobile);
+	padding-top: 80px;
+}
+
+.logo-nav-header{
+	z-index: 1;
+}
+
+.nav-burger-mobile{
+	display: block;
+}
+
+/*cross open*/
+.nav-burger-mobile > .cross-open{
+	position: relative;
+
+}
+
+.nav-burger-mobile .cross-open:before{
+	content: '';
+	position: absolute;
+	right: 65px;
+	height: 10px;
+	width: 100px;
+	z-index: 1;
+	background: #fe7030;
+	top: -15px;
+}
+
+.nav-burger-mobile .cross-open:after{
+	content: '';
+	position: absolute;
+	top: 15px;
+	right: 40px;
+	height: 10px;
+	width: 100px;
+	background: #fe7030;
+	z-index: 1;
+}
+
+/*cross close*/
+.nav-burger-mobile > .cross-close{
+	position: relative;
+	display: none;
+}
+
+.nav-burger-mobile .cross-close:before{
+	content: '';
+	position: absolute;
+	right: 40px;
+	height: 10px;
+	width: 100px;
+	z-index: 1;
+	background: #fe7030;
+	transform: rotate(-45deg);
+}
+
+.nav-burger-mobile .cross-close:after{
+	content: '';
+	position: absolute;
+	right: 40px;
+	height: 10px;
+	width: 100px;
+	background: #fe7030;
+	z-index: 1;
+	transform: rotate(45deg);
+}
+
+
+
+/*all next*/
+
+.nav-primary-section{
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: white;
+	width: 100%;
+	height: 100vh;
+	padding: 400px 100px 100px 100px;
+	display: none;
+	flex-direction: column;
+}
+
+.nav-titre-primary{
+	 font-family: Intro;
+	 font-size: 30px;
+	 letter-spacing: 2px;
+
+	 color: black;
+	 text-transform: uppercase;
+	transition: 0.3s ease;
+}
+
+/*expertise */
+.expertise > ul{
+	position: static;
+	background: transparent;
+	margin: 0px;
+	transform: translateY(0px);
+	opacity: 	1;
+	transition: 0s ease;
+}
+
+
+.expertise ul > li{
+	border-bottom: 0px;
+	padding: 40px 30px;
+}
+
+.expertise ul > li:first-child{
+	border-bottom: 0px;
+	padding-top: 70px;
+}
+
+.expertise ul > li:last-child{
+	border-bottom: 0px;
+	padding-bottom: 0px;
+}
+
+
+
+.expertise ul > li > a{
+	color: blue;
+}
+
+.expertise ul > li > a:hover{
+	color: orange;
+}
+
+.expertise{
+	position: static;
+}
+
+.nav-primary-section > li {
+    margin: 55px 25px;
+}
+
+
+}
+
+
+
+
