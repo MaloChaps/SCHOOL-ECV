@@ -155,7 +155,7 @@ body{
 }
 
 /*cross open*/
-.nav-burger-mobile > .cross-open{
+.nav-burger-mobile .cross-open{
 	position: relative;
 
 }
