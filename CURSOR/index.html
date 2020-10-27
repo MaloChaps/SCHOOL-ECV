@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Cursor</title>
+	<meta charset="utf-8">
+
+	<!-- css -->
+	<link rel="stylesheet" type="text/css" href="public/index.css">
+</head>
+<body>
+
+	<div class="section-img" id="section-img">
+		<div class="zone-hover-play" id="zone-hover-play"></div>
+		<div class="play-button" id="play-button"></div>
+	</div>
+
+	<script type="text/javascript">
+		const sectionImg = document.getElementById('section-img');
+   		const zoneHoverPlay = document.getElementById('zone-hover-play');
+   		const playButton = document.getElementById('play-button');
+
+
+   		zoneHoverPlay.addEventListener('mouseenter', () =>{
+   			playButton.classList.add("follow");
+   		});
+
+   		zoneHoverPlay.addEventListener('mouseleave', () =>{
+   			playButton.classList.remove("follow");
+   		});
+
+   		document.addEventListener('mousemove', function (event) {
+	        document.body.style.setProperty('--mouse-x', event.pageX+'px');
+	        document.body.style.setProperty('--mouse-y', event.pageY+'px');
+   		});
+	
+	</script>
+
+</body>
+</html>
+
+

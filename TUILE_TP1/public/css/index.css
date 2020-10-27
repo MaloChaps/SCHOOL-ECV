@@ -6,7 +6,7 @@
 	/*color*/
 	--color-primary: #7BBBBF;
 	--color-secondary: #7BBF9B;
-}
+}	
 
 
 html *{
@@ -40,7 +40,7 @@ html *{
 
 body{
 	scroll-behavior: smooth;
-	background: ;
+	/*cursor: none;*/
 }
 
 
@@ -67,7 +67,6 @@ body{
 .header-main{
 	width: 100%;
 	padding: 20px 100px;
-	border: solid red 1px;
 	display: flex;
 	justify-content: center;
 	align-content: center;
@@ -173,11 +172,56 @@ body{
 
 
 
+/*cursor */
 
 
 
 
 
+.cursor{
+	width: 10px;
+	height: 10px;
+	background: black;
+	border-radius: 100%;
+	position: fixed;
+	top: var(--mouse-y);
+	left: var(--mouse-x);
+	z-index: 300;
+	transform: translate(-50%, -50%);
+
+	pointer-events: none;
+}
+
+.cursor-child{
+	width: 40px;
+	height: 40px;
+	border: solid black 2px;
+	border-radius: 100%;
+	position: fixed;
+	top: var(--mouse-y);
+	left: var(--mouse-x);
+	z-index: 300;
+	transition: top, 0.2s ease, left 0.2s ease;
+	transform: translate(-50%, -50%);
+
+	pointer-events: none;
+
+}
+
+.cursorCircle:after{
+	content: 'play';
+	color: white;
+
+	text-transform: uppercase;
+	font-family: 'Helvetica Neue';
+}
+
+.cursorCircle{
+	width: 100px;
+	height: 100px;
+	background: black;
+	display: flex;justify-content: center;align-items: center;
+}
 
 
 

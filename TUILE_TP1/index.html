@@ -8,11 +8,10 @@
 </head>
 <body>
 
-	<header class="header-main">
-		<a href="#"><h1>Coucou on s'amuse en dave</h1></a>
-
-		
-	</header>
+	<div class="cursor" id="cursor">
+	</div>
+	<div class="cursor-child" id="cursor-child">
+	</div>
 
 	<section class="article-section">
 		<article class="box-article">
@@ -98,9 +97,32 @@
 				<h2 class="h1-primary-black">Titre de l'actu</h2>
 			</div>
 		</article>
-
 	</section>
 	
+	<script type="text/javascript">
+		document.addEventListener('mousemove', function (event) {
+	        document.body.style.setProperty('--mouse-x', event.pageX+'px');
+	        document.body.style.setProperty('--mouse-y', event.pageY+'px');
+   		});
 
+   		const cursorPrincipal = document.getElementById('cursor');
+   		const cursorChild = document.getElementById('cursor-child');
+   		const boxArticle = document.querySelectorAll('.img-box-article');
+
+
+   		boxArticle.forEach(function(box){
+   			box.addEventListener('mouseenter', () =>{
+   				cursorChild.classList.toggle('cursorCircle');
+   			});
+
+   			box.addEventListener('mouseleave', () =>{
+   				cursorChild.classList.remove('cursorCircle');
+   			});
+   		});
+
+   		
+
+
+	</script>
 </body>
 </html>
