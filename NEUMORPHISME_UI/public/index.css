@@ -255,9 +255,9 @@ header{
 /*cards favorite section*/
 .cards-favorite-selection{
 	display: flex;
+	width: 500px;
 	overflow-x: scroll;
 	height: 130px;
-	width: auto;
 }
 
 .cards-favorite-content{
