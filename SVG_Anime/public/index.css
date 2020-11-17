@@ -1,0 +1,63 @@
+:root{
+	/*padding*/
+	
+	/*color*/
+	--color-primary: #7BBBBF;
+	--color-secondary: #7BBF9B;
+}	
+
+
+html *{
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	text-decoration: none;
+}
+
+/*scroll bar css*/
+
+
+body{
+	scroll-behavior: smooth;
+	/*cursor: none;*/
+	height: 2000px;
+
+}
+
+
+svg{
+	position: fixed;
+	top: 100px;
+	width: 180px;
+	height: 180px;
+	border: solid red 1px;
+}
+
+circle {
+	cx: 12;
+	cy: 12;
+	r: 4;
+	stroke-width: 1.3px;
+	fill: none
+}
+
+
+path{
+	stroke-width: 1.3px;
+	fill: white;
+	stroke-dasharray: 100%;
+	stroke-dashoffset: 100%;
+	transition: stroke-dashoffset ease-out 1s;
+}
+
+svg:hover path{
+	stroke-dashoffset: 0;
+}
+
+
+
+
+
+
+

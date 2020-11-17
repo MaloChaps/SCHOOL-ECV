@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+	<head>
+		<meta charset="utf-8">
+		<title>shadows</title>
+		<style media="screen">
+		body {
+			height: 2000px;
+			margin: 0;
+		}
+
+		div {
+			position: fixed;
+			top: 100px;
+			left: 0;
+		}
+
+		.circle {
+			position: fixed;
+			height: 200px;
+			width: 200px;
+			transform: rotate(-90deg);
+		}
+
+		.circle circle {
+			cx: 100;
+			cy: 100;
+			r: 80;
+			stroke: red;
+			stroke-width: 5px;
+			fill: none;
+		}
+		</style>
+	</head>
+	<body>
+
+		<svg class="circle" viewbox="0 0 200 200">
+		  <circle></circle>
+		</svg>
+		<div>
+
+		</div>
+		<script>
+			var circle = document.querySelector('circle');
+			var length = circle.getTotalLength();
+
+			circle.setAttribute('stroke-dasharray', length + 'px')
+			circle.setAttribute('stroke-dashoffset', length + 'px')
+
+			window.addEventListener('scroll', function() {
+			document.querySelector('div').innerHTML =  'window.scrollY = ' + window.scrollY + 'px';
+			document.querySelector('div').innerHTML += '<br>document.body.scrollHeight = ' + document.body.scrollHeight + 'px';
+			document.querySelector('div').innerHTML += '<br>window.innerHeight ' + window.innerHeight + 'px';
+			document.querySelector('div').innerHTML += '<br>Total =' + (window.scrollY + window.innerHeight) + 'px'
+
+			var scrollpercent = (document.body.scrollTop + document.documentElement.scrollTop) / (document.documentElement.scrollHeight - document.documentElement.clientHeight);
+
+			var draw = length * scrollpercent;
+
+			// Reverse the drawing (when scrolling upwards)
+			circle.setAttribute('stroke-dashoffset', length - draw);
+
+			/* circle.setAttribute('stroke-dashoffset', draw) */
+			})
+		</script>
+	</body>
+</html>
