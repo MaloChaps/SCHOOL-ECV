@@ -1,0 +1,106 @@
+html *{
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	text-decoration: none;
+}
+
+/*font insert*/
+@font-face {
+	font-family: "PlayfairDisplay Black Italic;";
+	src: url('../font/PlayfairDisplay-BlackItalic.ttf');
+}
+
+
+:root{
+
+	/*color*/
+}
+
+/*scroll bar css*/
+
+::-webkit-scrollbar {
+ display: none;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  display: none;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+   display: none;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+ display: none;
+}
+
+body{
+	scroll-behavior: smooth;
+	width: 100%;
+	height: 100vh;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.svg-box{
+	width: 600px;
+	height: 600px;
+}
+
+svg{
+	overflow: visible;
+}
+
+.ticket-bottom{
+	transform-origin: bottom left;
+	transform: translateY(0px) translateX(0px) rotate(0deg);
+	transition: 0.2s ease;
+	transform-box: fill-box;
+
+	animation: animation-ticket-bottom 3s cubic-bezier(1,0,0,1) infinite;
+}
+
+@keyframes animation-ticket-bottom{
+	50%{
+		transform: translateY(2px) translateX(4px) rotate(-20deg);
+	}
+
+	100%{
+		transform: translateY(0px) translateX(0px) rotate(0deg);
+	}
+}
+
+
+.ticket-top{
+	transform-origin: bottom left;
+	transform: translateY(-18px) translateX(3px) rotate(37deg);
+	transform-box: fill-box;
+
+	animation: animation-ticket-top 3s cubic-bezier(1,0,0,1) infinite;
+}
+
+@keyframes animation-ticket-top{
+	50%{
+		transform: translateY(14px) translateX(5px) rotate(-30deg);
+	}
+
+	100%{
+		transform: translateY(-18px) translateX(3px) rotate(37deg);
+	}
+}
+
+
+
+
+
+
+
+
+
