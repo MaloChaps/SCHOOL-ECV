@@ -1,0 +1,88 @@
+html *{
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	text-decoration: none;
+}
+
+/*font insert*/
+@font-face {
+	font-family: "PlayfairDisplay Black Italic;";
+	src: url('../font/PlayfairDisplay-BlackItalic.ttf');
+}
+
+
+:root{
+
+	/*timing*/
+	--timing-animation: 3s;
+	--timing-animation-airplane: 3s;
+
+
+	/*cubic bezier*/
+	--cubic-bezier-animation: cubic-bezier(.85,.01,.11,1);
+}
+
+/*scroll bar css*/
+
+::-webkit-scrollbar {
+ display: none;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  display: none;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+   display: none;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+ display: none;
+}
+
+body{
+	height: 100vh;
+	width: 100%;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+svg{
+	overflow: visible;
+}
+
+.svg-composant-b{
+	transform-origin: bottom left;
+	transform: scale(2) rotate(-180deg);
+	transition: 1s ease;
+}
+
+svg:hover .svg-composant-b{
+	transition: 1s ease;
+	transform-origin: bottom left;
+	transform: scale(2) rotate(0deg);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
