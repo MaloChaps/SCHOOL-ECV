@@ -15,7 +15,12 @@ html *{
 
 :root{
 
-	/*color*/
+	/*timing*/
+	--timing-animation: 4s;
+
+
+	/*cubic bezier*/
+	--cubic-bezier-animation: cubic-bezier(.85,.01,.11,1);
 }
 
 /*scroll bar css*/
@@ -54,6 +59,7 @@ body{
 	height: 600px;
 }
 
+/*svg*/
 svg{
 	overflow: visible;
 }
@@ -64,7 +70,7 @@ svg{
 	transition: 0.2s ease;
 	transform-box: fill-box;
 
-	animation: animation-ticket-bottom 3s cubic-bezier(1,0,0,1) infinite;
+	animation: animation-ticket-bottom var(--timing-animation) var(--cubic-bezier-animation) infinite;
 }
 
 @keyframes animation-ticket-bottom{
@@ -83,7 +89,7 @@ svg{
 	transform: translateY(-18px) translateX(3px) rotate(37deg);
 	transform-box: fill-box;
 
-	animation: animation-ticket-top 3s cubic-bezier(1,0,0,1) infinite;
+	animation: animation-ticket-top var(--timing-animation) var(--cubic-bezier-animation) infinite;
 }
 
 @keyframes animation-ticket-top{
@@ -98,8 +104,28 @@ svg{
 
 
 
+.airplane-icon-svg{
+	transform: rotate(0deg);
+	opacity: 1;
+	animation: animation-ticket-airplane var(--timing-animation) var(--cubic-bezier-animation) infinite;
+}
 
+@keyframes animation-ticket-airplane{
+	25%{
+		transform: translateY(-140px);
+		opacity: 0;
+	}
 
+	80%{
+		transform-origin: center;
+		transform: translateY(-100px) rotate(-90deg);
+	}
+
+	100%{
+		transform: rotate(0deg);
+		opacity: 1;
+	}
+}
 
 
 
