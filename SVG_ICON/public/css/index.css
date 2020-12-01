@@ -16,7 +16,8 @@ html *{
 :root{
 
 	/*timing*/
-	--timing-animation: 4s;
+	--timing-animation: 3s;
+	--timing-animation-airplane: 4s;
 
 
 	/*cubic bezier*/
@@ -107,7 +108,7 @@ svg{
 .airplane-icon-svg{
 	transform: rotate(0deg);
 	opacity: 1;
-	animation: animation-ticket-airplane var(--timing-animation) var(--cubic-bezier-animation) infinite;
+	animation: animation-ticket-airplane var(--timing-animation-airplane) var(--cubic-bezier-animation) infinite;
 }
 
 @keyframes animation-ticket-airplane{
