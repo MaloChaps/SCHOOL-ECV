@@ -1,0 +1,143 @@
+html *{
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	text-decoration: none;
+}
+
+/*font insert*/
+@font-face {
+	font-family: "PlayfairDisplay Black Italic;";
+	src: url('../font/PlayfairDisplay-BlackItalic.ttf');
+}
+
+
+@font-face {
+	font-family: "Montserrat Regular";
+	src: url('../font/Montserrat-Regular.ttf');
+}
+
+
+@font-face {
+	font-family: "Rubik Regular";
+	src: url('../font/Rubik-Regular.ttf');
+}
+
+
+@font-face {
+	font-family: "Rubik Medium";
+	src: url('../font/Rubik-Medium.ttf');
+}
+
+:root{
+
+	/*color*/
+	--black-primary: #000000;
+	--white-primary: #ffffff;
+
+	--grey-dark: #41343d;
+	--blue-primary: #499cdc;
+	--blue-light: #e1f3f1;
+}
+
+/*scroll bar css*/
+
+::-webkit-scrollbar {
+ display: none;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  display: none;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+   display: none;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+ display: none;
+}
+
+body{
+	scroll-behavior: smooth;
+}
+
+
+
+
+/*nav*/
+.nav-titre-primary{
+	 font-family: Arial;
+	 font-size: 12px;
+	 letter-spacing: 2px;
+	 color: white;
+	 text-transform: uppercase;
+	transition: 0.3s ease;
+}
+
+.nav-titre-primary:hover{
+	transition: 0.3s ease;
+	text-decoration: underline;
+}
+
+/*
+
+.cursor{
+	width: 10px;
+	height: 10px;
+	background: black;
+	border-radius: 100%;
+	position: fixed;
+	top: var(--mouse-y);
+	left: var(--mouse-x);
+	z-index: 300;
+	transform: translate(-50%, -50%);
+
+	pointer-events: none;
+}
+
+.cursor-child{
+	width: 40px;
+	height: 40px;
+	border: solid black 2px;
+	border-radius: 100%;
+	position: fixed;
+	top: var(--mouse-y);
+	left: var(--mouse-x);
+	z-index: 300;
+	transition: top, 0.2s ease, left 0.2s ease;
+	transform: translate(-50%, -50%);
+
+	pointer-events: none;
+
+}
+
+.cursorCircle:after{
+	content: 'play';
+	color: white;
+
+	text-transform: uppercase;
+	font-family: 'Helvetica Neue';
+}
+
+.cursorCircle{
+	width: 100px;
+	height: 100px;
+	background: black;
+	display: flex;justify-content: center;align-items: center;
+}
+
+
+
+
+*/
+
+
+
+
+
+	
