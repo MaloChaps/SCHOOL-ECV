@@ -1,0 +1,207 @@
+html *{
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	text-decoration: none;
+}
+
+body{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	background: linear-gradient(127.93deg, #FFFFFF -10.52%, #EEEEEE 110.71%);
+	width: 100%;
+	height: 100vh;
+}
+
+
+.video-section{
+	width: 80%;
+	display: flex;justify-content: center;align-items: center;
+	flex-direction: column;
+	position: relative;
+}
+
+video{
+	width: 700px
+	height: 600px;
+	box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+	border-radius: 20px;
+}
+
+
+.control-bar{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	
+	background: linear-gradient(112.91deg, rgba(255, 255, 255, 0.51) 3.51%, rgba(255, 255, 255, 0) 111.71%);
+	filter: drop-shadow(21.5441px 25.8529px 43.0881px rgba(0, 0, 0, 0.05));
+	backdrop-filter: blur(8px);
+	border-radius: 18.2018px;
+
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+	height: 100px;
+	padding: 10px 30px 10px 30px;
+}
+
+
+.playbtn{
+	transition: ease-out .25s border;
+	height: 50px;
+}
+
+.playbtn.play{
+	border-style: solid;
+	border-width: 25px 0 25px 50px;
+	border-color: transparent transparent transparent #543FD4;
+}
+
+.playbtn.pause{
+	border-style: double;
+	border-width: 0 0 0 50px;
+	height: 50px;
+	border-color: transparent transparent transparent #543FD4;
+}
+
+.bar{
+	width: 100%;
+	height: 10px;
+	background: rgba(84, 63, 212, 0.2);;
+	position: relative;
+}
+
+.progress{
+	position: absolute;
+	width: 0;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background-color: #543FD4;
+}
+
+.section-content{
+	display: flex;
+}
+
+.fastBack, 
+.forward{
+	padding: 10px 20px;
+	margin-right: 10px;
+	margin-left: 10px;
+	font-family: Arial;
+	font-size: 20px;
+	color: #543FD4;
+	background: white;
+	border-radius: 100%;
+	text-align: center;
+}
+
+.mutedClick{
+	color: white;
+	padding: 10px 10px;
+	margin-right: 10px;
+	margin-left: 10px;
+	background: white;
+	border-radius: 100%;
+	text-align: center;
+}
+
+/*Input range*/
+
+
+input[type=range] {
+  -webkit-appearance: none;
+  margin: 10px 0;
+  margin-left: 10px;
+  width: 100px;
+}
+input[type=range]:focus {
+  outline: none;
+}
+input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 7px;
+  cursor: pointer;
+  animate: 0.2s;
+  box-shadow: 0px 0px 0px #000000;
+  background: #d9d4f3;
+  border-radius: 0px;
+  border: 0px solid #000000;
+}
+input[type=range]::-webkit-slider-thumb {
+  box-shadow: 0px 0px 1px #000000;
+  border: 0px solid #000000;
+  height: 22px;
+  width: 22px;
+  border-radius: 50px;
+  background: #ffffff;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -7.5px;
+}
+input[type=range]:focus::-webkit-slider-runnable-track {
+  background: #d9d4f3;
+}
+input[type=range]::-moz-range-track {
+  width: 100%;
+  height: 7px;
+  cursor: pointer;
+  animate: 0.2s;
+  box-shadow: 0px 0px 0px #000000;
+  background: #d9d4f3;
+  border-radius: 0px;
+  border: 0px solid #000000;
+}
+input[type=range]::-moz-range-thumb {
+  box-shadow: 0px 0px 1px #000000;
+  border: 0px solid #000000;
+  height: 22px;
+  width: 22px;
+  border-radius: 50px;
+  background: #ffffff;
+  cursor: pointer;
+}
+input[type=range]::-ms-track {
+  width: 100%;
+  height: 7px;
+  cursor: pointer;
+  animate: 0.2s;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+input[type=range]::-ms-fill-lower {
+  background: #d9d4f3;
+  border: 0px solid #000000;
+  border-radius: 0px;
+  box-shadow: 0px 0px 0px #000000;
+}
+input[type=range]::-ms-fill-upper {
+  background: #d9d4f3;
+  border: 0px solid #000000;
+  border-radius: 0px;
+  box-shadow: 0px 0px 0px #000000;
+}
+input[type=range]::-ms-thumb {
+  box-shadow: 0px 0px 1px #000000;
+  border: 0px solid #000000;
+  height: 22px;
+  width: 22px;
+  border-radius: 50px;
+  background: #ffffff;
+  cursor: pointer;
+}
+input[type=range]:focus::-ms-fill-lower {
+  background: #d9d4f3;
+}
+input[type=range]:focus::-ms-fill-upper {
+  background: #d9d4f3;
+}
+
+

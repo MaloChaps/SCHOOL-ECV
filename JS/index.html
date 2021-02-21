@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Snake</title>
+	<link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+	<main></main>
+	<div class="score">Score : <span>0</span></div>
+	<script type="text/javascript">
+
+		const size = 300
+		const speed = 123
+		let currentDir = ''
+		let playing = false
+		let score = '0'
+
+		document.body.style.display = 'flex';
+		document.body.style.flexDirection = 'column';
+		document.body.style.alignItems = 'center';
+		document.body.style.justifyContent = 'center';
+		document.body.style.minHeight = '100vh';
+
+		const main = document.querySelector('main');
+		main.style.width = size + 'px';
+		main.style.height = size + 'px';
+		main.style.position = 'relative';
+		main.style.backgroundColor = '#000';
+
+		const pomme = document.createElement('span');
+		pomme.style.width = '10px';
+		pomme.style.height = '10px';
+		pomme.style.position = 'absolute';
+		pomme.style.backgroundColor = 'red';
+		pomme.style.left = Math.round(Math.random() * (size - 10) / 10) * 10 + 'px';
+		pomme.style.top = Math.round(Math.random() * (size - 10) / 10) * 10 + 'px';
+		pomme.classList.add('apple')
+
+
+		main.appendChild(pomme);
+		const apple = document.querySelector('.apple');
+		const serpent = document.createElement('span');
+
+		serpent.style.width = '10px';
+		serpent.style.height = '10px';
+		serpent.style.position = 'absolute';
+		serpent.style.backgroundColor = 'green';
+		serpent.style.left = 0 + 'px';
+		serpent.style.top = 0 + 'px';
+		serpent.classList.add('snake');
+
+		main.appendChild(serpent);
+		const snake = document.querySelector('.snake');
+
+		function manger(){
+			if(apple.style.left == snake.style.left){
+				if(apple.style.top == snake.style.top){
+				pomme.style.left = Math.round(Math.random() * (size - 10) / 10) * 10 + 'px';
+				pomme.style.top = Math.round(Math.random() * (size - 10) / 10) * 10 + 'px';
+
+				++score
+				document.querySelector('.score span').innerText = score;
+
+				let bout_de_serpent = serpent.cloneNode()
+				bout_de_serpent.style.left = ''
+				bout_de_serpent.style.left = ''
+			}}
+		}
+
+		let positions = []
+
+		function move(dir){
+			let way = {
+				'top': -10,
+				'left': -10,
+				'bottom': 10,
+				'right': 10
+			}
+
+			let sens;
+			if(dir == 'left' || dir == 'right'){
+				sens = 'left'
+			}
+			if(dir == 'top' || dir == 'bottom'){
+				sens = 'top'
+			}
+
+
+
+			let currentPos = parseInt(window.getComputedStyle(snake).getPropertyValue(sens));
+			
+			if((dir == 'left' || dir == 'top') && currentPos <= 0){
+				currentPos = size 
+			} else if ((dir == 'right' || dir == 'bottom') && currentPos >= size - 10){
+				currentPos = 0 - 10
+			}
+
+			snake.style[sens] = (currentPos + way[dir]) + 'px'
+			manger()
+		}
+
+		let timer;
+		function to_move(dir, way){
+			playing = true
+			clearInterval(timer)
+			timer = setInterval( function(){
+				currentDir = dir
+				move(dir, way)
+			}, speed)
+		}
+
+		function pause(){
+			playing = false
+			clearInterval(timer)
+		}
+
+		window.addEventListener('keydown', function(event) {
+
+			if(event.key == 'ArrowRight') {
+				if(currentDir != 'left'){
+					to_move('right')
+				}
+			}
+
+			if(event.key == 'ArrowLeft') {
+				if(currentDir != 'Right'){
+					to_move('left')
+				}
+			}
+
+			if(event.key == 'ArrowDown') {
+				if(currentDir != 'top'){
+					to_move('bottom')
+				}
+			}
+
+			if(event.key == 'ArrowUp') {
+				if(currentDir != 'bottom'){
+					to_move('top')
+				}
+			}
+
+			if(event.code == 'Space') {
+				if(playing){
+					pause()
+				}else{
+					to_move(currentDir)
+				}
+			}
+			
+		});
+
+
+
+
+	</script>
+</body>
+</html>
+
+

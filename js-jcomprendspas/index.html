@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>JS Je comprends pas</title>
+</head>
+<body>
+
+	<div id="wrapper">
+		
+	</div>
+
+	<script type="text/javascript">
+
+		var users = [{
+		fname: 'John',
+		lname: 'Doe',
+		age: '35',
+		gender: 'male',
+		face: {
+		mustache: true,
+		eyes: 'brown'
+		}
+			},
+		{
+		fname: 'Jane',
+		lname: 'Doe',
+		age: '25',
+		gender: 'female',
+		face: {
+		mustache: false,
+		eyes: 'blue'
+		}
+		}]
+
+		function buildUsersCards() {
+			let cards = '';
+			let wrapper = document.getElementById('wrapper');
+
+		users.forEach(function(user, i) {
+		const card = document.createElement('div');
+
+		cards += '<div>' + user.lname + '</div>' + 
+		'<div class="age">' + user.age + '</div>' +
+		'<div class="eyes">' + user.face.eyes + '</div>';
+
+
+		});
+		wrapper.innerHTML = cards;
+
+		}
+
+		buildUsersCards();
+
+	</script>
+
+</body>
+</html>

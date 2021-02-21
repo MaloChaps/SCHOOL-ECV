@@ -1,0 +1,134 @@
+@media screen and (max-device-width : 825px) {
+
+body{
+	display: flex;
+	background: #E8E8E8;
+	position: relative;
+	flex-direction: column;
+}
+
+/*Snake player css*/
+.snake-player{
+	position: relative;
+    display: flex;
+    height: 110vh;
+    transform: scale(1.5);
+    justify-content: center;
+    align-items: center;
+}
+
+
+main{
+	/*overflow: hidden;*/
+	position: relative;
+	width: var(--size);
+	height: var(--size);
+	border-radius: 10px;	position: relative;
+	background: linear-gradient(112.91deg, rgba(255, 255, 255, 0.51) -16.49%, rgba(255, 255, 255, 0) 91.71%);
+	filter: drop-shadow(11.8362px 14.2035px 23.6724px rgba(0, 0, 0, 0.05));
+	backdrop-filter: blur(16.5707px);
+	border: 2px solid rgba(255, 255, 255, 0.4);
+	box-sizing: border-box;
+}
+
+
+.glasses{
+	position: absolute;
+	width: 500px;
+	height: 500px;
+}
+
+.pomme{
+	width: var(--size-icons);
+	height: var(--size-icons);
+	position: absolute;
+	overflow: hidden;
+}
+
+.serpent{
+	width: var(--size-icons);
+	height: var(--size-icons);
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	overflow: hidden;
+}
+
+.serpent > img{
+	 width: 100%;
+  	height: auto;
+}
+
+.pomme > img{
+	width: 100%;
+  height: auto;
+}
+
+.score{
+	position: absolute;
+	top: -8%;
+	left: 0px;
+	color: white;
+	font-family: Biotif Regular;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 16px;
+	line-height: 24px;
+	color: #0C1437;
+}
+
+/*snake controle*/
+.snake-controle{
+	width: 500px;
+	position: absolute;
+	bottom: -28%;
+	display: flex;
+	justify-content: space-between;
+}
+.snake-controle > button{
+	width: 150px;
+	height: 100px;
+	background: #E8E8E8;
+	box-shadow: -5px 5px 10px rgba(213, 213, 213, 0.2), 5px -5px 10px rgba(213, 213, 213, 0.2), -5px -5px 10px rgba(251, 251, 251, 0.9), 5px 5px 13px rgba(213, 213, 213, 0.9), inset 1px 1px 2px rgba(251, 251, 251, 0.3), inset -1px -1px 2px rgba(213, 213, 213, 0.5);
+	border-radius: 10px;
+	border: none;
+}
+
+
+
+/*Snake set css*/
+.snake-set{
+	height: 20vh;
+	display: flex;justify-content: center;
+	flex-direction: column;
+	padding-left: 4%;
+}
+
+.snake-set > h1{
+	margin-bottom: 20px;
+}
+
+.snake-set > h2{
+	margin-bottom: 25px;
+}
+
+.snake-set > a{
+	margin-right:auto;
+	padding: 12px 24px;
+	border-radius: 6px;
+	background: #7000FF;
+
+}
+
+.snake-set > a:hover{
+	background: #A055FF;
+}
+
+}
+
+
+
+
+
+
+

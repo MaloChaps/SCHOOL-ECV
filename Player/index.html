@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Player</title>
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/brands.min.css" integrity="sha512-dBL5cY4qTt42J1cfabCHTYR7KMztyd+n4t2GhD6EH/MKWJIIHuEYckJ1nHEpTwIaiDkrjzbc6WyiSkdLP+3INQ==" crossorigin="anonymous" />
+</head>
+<body>
+
+	<div class="video-section">
+		<video poster="source/poster.jpg" loop>
+			<source src="source/videoplayback.mp4">
+		</video>
+
+		<div class="control-bar">
+			<div class="section-content">
+				<div class="fastBack" onclick="fastPlay(false)">«</div>
+				<div class="playbtn play" onclick="playVideo()"></div>
+				<div class="forward" onclick="fastPlay(true)">»</div>
+			</div>
+
+			<div class="mutedClick" onclick="mutedMusic()"><img src="source/volume_mute.svg"></div>
+
+			<div class="bar">
+				<div class="progress"></div>
+			</div>
+			
+			<input type="range" value="100" class="volume" min="0" max="100" step="1">
+		</div>
+	</div>
+
+
+	<script type="text/javascript">
+		
+		const video = document.querySelector('video')
+		const playbtn = document.querySelector('.playbtn')
+
+		video.addEventListener('click', playVideo)
+
+		function playVideo(){
+			if(video.paused){
+				video.play()
+			}else{
+				video.pause()
+			}
+			playbtn.classList.toggle('play')
+			playbtn.classList.toggle('pause')
+
+			console.log({video})
+		}
+
+		const progress = document.querySelector('.progress')
+		video.addEventListener('timeupdate', function(){
+			progress.style.width = video.currentTime / video.duration *100 + '%'
+		})
+
+		const bar = document.querySelector('.bar')
+		bar.addEventListener('click', function(ev){
+
+			let newTimeId = ev.pageX - bar.getBoundingClientRect().left
+			let totalWidth = parseInt(window.getComputedStyle(bar).getPropertyValue('width'))
+
+			progress.style.width = newTimeId + 'px'
+
+			video.currentTime = newTimeId / totalWidth * video.duration
+		})
+
+		function fastPlay(isForwards){
+			if (isForwards) {
+				video.currentTime = video.currentTime + 10
+			}else{
+				video.currentTime = video.currentTime - 10
+			}
+		}
+
+		const range = document.querySelector('.volume')
+		range.addEventListener('change', function(){
+			video.volume = range.value / 100
+		})
+
+
+		function mutedMusic(){
+			if (video.muted) {
+				video.muted = false
+			}else{
+				video.muted = true
+			}
+		}
+	
+
+	</script>
+
+</body>
+</html>

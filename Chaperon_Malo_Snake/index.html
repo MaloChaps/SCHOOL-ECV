@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Le Tiboa®</title>
+	<link rel="stylesheet" href="css/index.css">
+	<link rel="stylesheet" type="text/css" href="css/dist.css">
+	<link rel="stylesheet" type="text/css" href="css/responsive.css">
+	<link rel="icon" href="src/images/tibo.png"/>
+
+</head>
+<body>
+
+	<div class="snake-set">
+		<h1 class="h1-black">Le <strong class="h1-black-bold">tiboa</strong>®</h1>
+		<h2 class="h2-black">Welcom on the tiboa game,<br> the goal : to help tibo to eat Louis en dave</h2>
+		<h3 class="h3-black">Thank's <a href="http://antoinelebras.com/" target="_blanck">Antoine</a> for the name of the game</h3>
+		<a href="http://www.thibaultlenoble.com/" target="_blanck" class="cta-white-18">Découvre tibo</a>
+	</div>
+
+	<div class="snake-player">
+		<main>
+			<span class="pomme"><img src="src/images/louis.png" width="100%"></span>
+			<span class="serpent"><img src="src/images/tibo.png"></span>
+
+			<div class="snake-controle">
+				<button onclick="to_move('left')"><img src="src/arrow/arrow-left.svg"></button>
+				<button onclick="to_move('top')"><img src="src/arrow/arrow-top.svg"></button>
+				
+				<button onclick="to_move('bottom')"><img src="src/arrow/arrow-bottom.svg"></button>
+				<button onclick="to_move('right')"><img src="src/arrow/arrow-right.svg"></button>
+			</div>
+
+
+		<div class="score">Score : <strong class="counter">0</strong></div>
+		</main>
+
+		<div class="glasses" >
+			<div class="pattern"></div>
+			<div class="pattern-blue"></div>
+			<div class="pattern-violet"></div>
+		</div>
+	</div>
+
+
+	<!-- script -->
+	<script type="text/javascript">
+
+		const size = 500
+		const speed = 123
+		let currentDir = ''
+		let playing = false
+		let score = '0'
+
+		const main = document.querySelector('main');
+
+		const pomme = document.querySelector('span');
+		pomme.style.left = Math.round(Math.random() * (size - 50) / 50) * 50 + 'px'
+		pomme.style.top = Math.round(Math.random() * (size - 50) / 50) * 50 + 'px'
+		pomme.classList.add('apple')
+
+
+		main.appendChild(pomme);
+		const apple = document.querySelector('.apple');
+
+		const serpent = document.querySelector('span');
+		serpent.classList.add('snake');
+
+		main.appendChild(serpent);
+		const snake = document.querySelector('.snake');
+
+		function manger(){
+			if(apple.style.left == snake.style.left){
+				if(apple.style.top == snake.style.top){
+				pomme.style.left = Math.round(Math.random() * (size - 50) / 50) * 50 + 'px';
+				pomme.style.top = Math.round(Math.random() * (size - 50) / 50) * 50 + 'px';
+
+				++score
+				document.querySelector('.score .counter').innerText = score;
+
+				let bout_de_serpent = serpent.cloneNode()
+				bout_de_serpent.style.left = ''
+				bout_de_serpent.style.left = ''
+			}}
+		}
+
+		let positions = []
+
+		function move(dir){
+			let way = {
+				'top': -50,
+				'left': -50,
+				'bottom': 50,
+				'right': 50
+			}
+
+			let sens;
+			if(dir == 'left' || dir == 'right'){
+				sens = 'left'
+			}
+			if(dir == 'top' || dir == 'bottom'){
+				sens = 'top'
+			}
+
+
+
+			let currentPos = parseInt(window.getComputedStyle(snake).getPropertyValue(sens));
+			
+			if((dir == 'left' || dir == 'top') && currentPos <= 0){
+				currentPos = size 
+			} else if ((dir == 'right' || dir == 'bottom') && currentPos >= size - 50){
+				currentPos = 0 - 50
+			}
+
+			snake.style[sens] = (currentPos + way[dir]) + 'px'
+			manger()
+		}
+
+		let timer;
+		function to_move(dir, way){
+			playing = true
+			clearInterval(timer)
+			timer = setInterval( function(){
+				currentDir = dir
+				move(dir, way)
+			}, speed)
+		}
+
+		function pause(){
+			playing = false
+			clearInterval(timer)
+		}
+
+
+		window.addEventListener('keydown', function(event) {
+			if(event.code == 'Space') {
+				if(playing){
+					pause()
+				}else{
+					to_move(currentDir)
+				}
+			}
+
+			if(event.key == 'ArrowRight') {
+				if(currentDir != 'left'){
+					to_move('right')
+
+				}
+			}
+
+			if(event.key == 'ArrowLeft') {
+				if(currentDir != 'Right'){
+					to_move('left')
+				}
+			}
+
+			if(event.key == 'ArrowDown') {
+				if(currentDir != 'top'){
+					to_move('bottom')
+				}
+			}
+
+			if(event.key == 'ArrowUp') {
+				if(currentDir != 'bottom'){
+					to_move('top')
+				}
+			}
+		});
+	</script>
+</body>
+</html>
+
+

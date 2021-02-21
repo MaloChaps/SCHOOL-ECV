@@ -1,0 +1,142 @@
+@font-face {
+	font-family: "Biotif Regular";
+	src: url('../src/font/Biotif-Regular.ttf');
+}
+
+@font-face {
+	font-family: "Biotif RegularItalic";
+	src: url('../src/font/Biotif-RegularItalic.ttf');
+}
+
+@font-face {
+	font-family: "Biotif BoldItalic";
+	src: url('../src/font/Biotif-BoldItalic.ttf');
+}
+
+@font-face {
+	font-family: "Biotif Bold";
+	src: url('../src/font/Biotif-Bold.ttf');
+}
+
+
+html *{
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	text-decoration: none;
+}
+
+/*start*/
+
+.h1-black{
+	font-family: Biotif Regular;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 44px;
+	line-height: 120%;
+	/* identical to box height, or 46px */
+
+	/* $-Blue-800 */
+
+	color: #0C1437;
+}
+
+.h1-black-bold{
+	font-family: Biotif Bold;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 44px;
+	line-height: 120%;
+	/* identical to box height, or 46px */
+
+	/* $-Blue-800 */
+
+	color: #0C1437;
+}
+
+
+.h2-black{
+	font-family: Biotif Regular;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 26px;
+	line-height: 125%;
+	/* or 35px */
+
+
+	/* $-Blue-800 */
+
+	color: #0C1437;
+}
+
+.h3-black{
+	font-family: Biotif Regular;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 18px;
+	line-height: 125%;
+	/* or 35px */
+
+
+	/* $-Blue-800 */
+
+	color: #0C1437;
+}
+
+.cta-white-18{
+	font-family: Biotif Regular;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 18px;
+	line-height: 24px;
+	/* or 150% */
+
+
+	color: white;
+}
+
+
+/*Paternne blurrrr*/
+.pattern{
+	position: absolute;
+	top: -40%;
+	left: -40%;
+	width: var(--size);
+	height: var(--size);
+	height: 400px;
+	width: 400px;
+	position: absolute;
+	background: #FF7510;
+	border-radius: 100%;
+	z-index: -99;
+}
+
+.pattern-blue{
+	position: absolute;
+	right: -12%;
+	top: -12%;
+	height: 150px;
+	width: 150px;
+	position: absolute;
+	background: #7000FF;
+	border-radius: 100%;
+	z-index: -99;
+}
+
+.pattern-violet{
+	position: absolute;
+	right: -15%;
+	bottom: -5%;
+	height: 200px;
+	width: 200px;
+	position: absolute;
+	background: #7000FF;
+	border-radius: 100%;
+	z-index: -99;
+}
+
+
+
+
+
